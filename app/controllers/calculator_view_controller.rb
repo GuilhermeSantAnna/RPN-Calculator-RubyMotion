@@ -7,7 +7,8 @@ class CalculatorViewController < UIViewController
 
   def viewDidLoad
     # label for display
-    view.addSubview(makeLabel)
+    @label = makeLabel
+    view.addSubview(@label)
 
     # calc buttons
     view.addSubview(makeButton(title: "7", x: 20,  y: 60))
@@ -44,7 +45,15 @@ class CalculatorViewController < UIViewController
     button = UIButton.buttonWithType(UIButtonTypeRoundedRect)
     button.frame = CGRectMake(options[:x], options[:y], 64, 37)
     button.setTitle(options[:title], forState:UIControlStateNormal)
+    button.addTarget(self, action: :'digit_pressed', forControlEvents:UIControlEventTouchUpInside)
     button
+  end
+
+  def digit_pressed
+    @calculator_brain = CalculatorBrain.alloc.init
+    @calculator_brain.push_operand("+")
+
+    @label.text = "results"
   end
 
 end
