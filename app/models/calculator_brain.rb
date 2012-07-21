@@ -17,7 +17,6 @@ class CalculatorBrain
   end
 
   def perform_operation(operation)
-    puts "operation => #{operation}"
     result = 0
 
     case operation

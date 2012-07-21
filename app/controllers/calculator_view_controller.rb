@@ -84,11 +84,16 @@ class CalculatorViewController < UIViewController
 
   def operation_pressed(button)
     enter_pressed(button) if @userIsInTheMiddleOfEnteringANumber
-    @label.text = @brain.perform_operation(button.currentTitle).to_s
+
+    result = @brain.perform_operation(button.currentTitle)
+    result = result.to_i if result == result.to_i
+
+    @label.text = result.to_s
   end
 
   def clear_pressed(button)
-    puts "clear pressed"
+    @label.text = "0"
+    @brain.operand_stack = []
   end
 
 end
