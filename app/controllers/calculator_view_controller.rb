@@ -10,6 +10,7 @@ class CalculatorViewController < UIViewController
   def viewDidLoad
     @userIsInTheMiddleOfEnteringANumber = false
     @brain = CalculatorBrain.alloc.init
+
     # label for display
     @label = makeLabel
     view.addSubview(@label)
@@ -47,7 +48,7 @@ class CalculatorViewController < UIViewController
     options[:y] = 60 unless options[:y]
 
     button = UIButton.buttonWithType(UIButtonTypeRoundedRect)
-    button.frame = CGRectMake(options[:x], options[:y], 64, 37)
+    button.frame = CGRectMake(options[:x], options[:y], 65, 35)
     button.setTitle(options[:title], forState:UIControlStateNormal)
     
     case button.currentTitle
