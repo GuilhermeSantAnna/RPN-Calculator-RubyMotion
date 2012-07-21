@@ -1,11 +1,15 @@
 class CalculatorViewController < UIViewController
 
+  attr_reader :label, :userIsInTheMiddleOfEnteringANumber, :brain
+
   def loadView
     self.view = UIView.alloc.init
     self.view.backgroundColor = UIColor.whiteColor
   end
 
   def viewDidLoad
+    @userIsInTheMiddleOfEnteringANumber = false
+    @brain = CalculatorBrain.alloc.init
     # label for display
     @label = makeLabel
     view.addSubview(@label)
@@ -31,7 +35,7 @@ class CalculatorViewController < UIViewController
 
   def makeLabel
     label = UILabel.alloc.initWithFrame([[10,20], [300,30]])
-    label.text = "10"
+    label.text = "0"
     label.textAlignment = UITextAlignmentRight
     label.font = UIFont.boldSystemFontOfSize(20)
     label
@@ -45,15 +49,46 @@ class CalculatorViewController < UIViewController
     button = UIButton.buttonWithType(UIButtonTypeRoundedRect)
     button.frame = CGRectMake(options[:x], options[:y], 64, 37)
     button.setTitle(options[:title], forState:UIControlStateNormal)
-    button.addTarget(self, action: :'digit_pressed', forControlEvents:UIControlEventTouchUpInside)
+    
+    case button.currentTitle
+      when "Enter"
+        button.addTarget(self, action: 'enter_pressed:', forControlEvents:UIControlEventTouchUpInside)
+      when "C"
+        button.addTarget(self, action: 'clear_pressed:', forControlEvents:UIControlEventTouchUpInside)
+      when "+", "-", "*", "/"
+        button.addTarget(self, action: 'operation_pressed:', forControlEvents:UIControlEventTouchUpInside)
+      else
+        button.addTarget(self, action: 'digit_pressed:', forControlEvents:UIControlEventTouchUpInside)
+    end
+    
+
     button
   end
 
-  def digit_pressed
+  def digit_pressed(button)
     @calculator_brain = CalculatorBrain.alloc.init
     @calculator_brain.push_operand("+")
 
-    @label.text = "results"
+    if @userIsInTheMiddleOfEnteringANumber
+      @label.text = "#{@label.text}#{button.currentTitle}"
+    else
+      @label.text = button.currentTitle
+      @userIsInTheMiddleOfEnteringANumber = true
+    end
+  end
+
+  def enter_pressed(button)
+    @brain.push_operand(@label.text)
+    @userIsInTheMiddleOfEnteringANumber = false
+  end
+
+  def operation_pressed(button)
+    enter_pressed(button) if @userIsInTheMiddleOfEnteringANumber
+    @label.text = @brain.perform_operation(button.currentTitle).to_s
+  end
+
+  def clear_pressed(button)
+    puts "clear pressed"
   end
 
 end
