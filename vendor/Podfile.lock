@@ -1,0 +1,7 @@
+PODS:
+  - UIGlossyButton (0.0.7):
+    - UIGlossyButton/LayerEffects (= 0.0.7)
+  - UIGlossyButton/LayerEffects (0.0.7)
+
+DEPENDENCIES:
+  - UIGlossyButton

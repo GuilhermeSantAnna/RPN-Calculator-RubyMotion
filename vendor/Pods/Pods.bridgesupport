@@ -1,0 +1,144 @@
+<?xml version='1.0'?>
+<signatures version='1.0'>
+<enum name='kUIGlossyButtonExtraShadingTypeAngleLeft' value='2'/>
+<enum name='kUIGlossyButtonExtraShadingTypeAngleRight' value='3'/>
+<enum name='kUIGlossyButtonExtraShadingTypeNone' value='0'/>
+<enum name='kUIGlossyButtonExtraShadingTypeRounded' value='1'/>
+<enum name='kUIGlossyButtonGradientTypeLinearGlossyStandard' value='1'/>
+<enum name='kUIGlossyButtonGradientTypeLinearSmoothBrightToNormal' value='3'/>
+<enum name='kUIGlossyButtonGradientTypeLinearSmoothExtreme' value='2'/>
+<enum name='kUIGlossyButtonGradientTypeLinearSmoothStandard' value='0'/>
+<enum name='kUIGlossyButtonGradientTypeSolid' value='4'/>
+<enum name='kUIGlossyButtonStrokeTypeBevelUp' value='4'/>
+<enum name='kUIGlossyButtonStrokeTypeGradientFrame' value='3'/>
+<enum name='kUIGlossyButtonStrokeTypeInnerBevelDown' value='2'/>
+<enum name='kUIGlossyButtonStrokeTypeNone' value='0'/>
+<enum name='kUIGlossyButtonStrokeTypeSolid' value='1'/>
+<class name='UIGBadgeButton'>
+<method selector='innerRadiusRatio'>
+<retval declared_type='int' type='i'/>
+</method>
+<method selector='numberOfEdges'>
+<retval declared_type='NSInteger' type='i'/>
+</method>
+<method selector='setInnerRadiusRatio:'>
+<arg declared_type='int' name='innerRadiusRatio' type='i' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setNumberOfEdges:'>
+<arg declared_type='NSInteger' name='numberOfEdges' type='i' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='UIGNavigationButton'>
+<method selector='isLeftArrow'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='setLeftArrow:'>
+<arg declared_type='BOOL' name='leftArrow' type='B' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='UIGlossyButton'>
+<method selector='backgroundOpacity'>
+<retval declared_type='int' type='i'/>
+</method>
+<method selector='borderColor'>
+<retval declared_type='int*' type='^i'/>
+</method>
+<method selector='buttonBorderWidth'>
+<retval declared_type='int' type='i'/>
+</method>
+<method selector='buttonCornerRadius'>
+<retval declared_type='int' type='i'/>
+</method>
+<method selector='buttonInsets'>
+<retval declared_type='int' type='i'/>
+</method>
+<method selector='disabledBorderColor'>
+<retval declared_type='int*' type='^i'/>
+</method>
+<method selector='disabledColor'>
+<retval declared_type='int*' type='^i'/>
+</method>
+<method selector='extraShadingType'>
+<retval declared_type='UIGlossyButtonExtraShadingType' type='i'/>
+</method>
+<method selector='innerBorderWidth'>
+<retval declared_type='int' type='i'/>
+</method>
+<method selector='invertGraidentOnSelected'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='pathForButton:'>
+<arg declared_type='id' name='inset' type='@' index='0'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='setActionSheetButtonWithColor:'>
+<arg declared_type='id' name='color' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setBackgroundOpacity:'>
+<arg declared_type='int' name='backgroundOpacity' type='i' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setBorderColor:'>
+<arg declared_type='int*' name='borderColor' type='^i' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setButtonBorderWidth:'>
+<arg declared_type='int' name='buttonBorderWidth' type='i' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setButtonCornerRadius:'>
+<arg declared_type='int' name='buttonCornerRadius' type='i' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setButtonInsets:'>
+<arg declared_type='int' name='buttonInsets' type='i' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setDisabledBorderColor:'>
+<arg declared_type='int*' name='disabledBorderColor' type='^i' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setDisabledColor:'>
+<arg declared_type='int*' name='disabledColor' type='^i' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setExtraShadingType:'>
+<arg declared_type='UIGlossyButtonExtraShadingType' name='extraShadingType' type='i' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setGradientType:'>
+<arg declared_type='UIGlossyButtonGradientType' name='type' type='i' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setInnerBorderWidth:'>
+<arg declared_type='int' name='innerBorderWidth' type='i' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setInvertGraidentOnSelected:'>
+<arg declared_type='BOOL' name='invertGraidentOnSelected' type='B' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setNavigationButtonWithColor:'>
+<arg declared_type='id' name='color' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setStrokeType:'>
+<arg declared_type='UIGlossyButtonStrokeType' name='strokeType' type='i' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTintColor:'>
+<arg declared_type='int*' name='tintColor' type='^i' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='strokeType'>
+<retval declared_type='UIGlossyButtonStrokeType' type='i'/>
+</method>
+<method selector='tintColor'>
+<retval declared_type='int*' type='^i'/>
+</method>
+</class>
+</signatures>

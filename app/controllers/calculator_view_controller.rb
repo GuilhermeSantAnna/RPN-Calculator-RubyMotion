@@ -16,9 +16,18 @@ class CalculatorViewController < UIViewController
     view.addSubview(@label)
 
     # calc buttons
-    view.addSubview(makeButton(title: "7", x: 20,  y: 60))
-    view.addSubview(makeButton(title: "8", x: 94,  y: 60))
-    view.addSubview(makeButton(title: "9", x: 168, y: 60))
+    seven_button = makeButton(title: "7", x: 20,  y: 60)
+    view.addSubview(seven_button)
+    seven_button.performSelector("brightness=:", withObject:0.1, afterDelay:0)
+
+    eight_button = makeButton(title: "8", x: 94,  y: 60)
+    view.addSubview(eight_button)
+    eight_button.performSelector("brightness=:", withObject:0.1, afterDelay:0)
+
+    nine_button = makeButton(title: "9", x: 168, y: 60)
+    view.addSubview(nine_button)
+    nine_button.performSelector("brightness=:", withObject:0.1, afterDelay:0)
+
     view.addSubview(makeButton(title: "*", x: 242, y: 60))
     view.addSubview(makeButton(title: "4", x: 20,  y: 107))
     view.addSubview(makeButton(title: "5", x: 94,  y: 107))
@@ -31,7 +40,9 @@ class CalculatorViewController < UIViewController
     view.addSubview(makeButton(title: "C", x: 20,  y: 201))
     view.addSubview(makeButton(title: "0", x: 94,  y: 201))
     view.addSubview(makeButton(title: "Enter", x: 168,  y: 201))
-    view.addSubview(makeButton(title: "-", x: 242,  y: 201))
+
+    minus_button = makeButton(title: "-", x: 242,  y: 201)
+    view.addSubview(minus_button)
   end
 
   def makeLabel
@@ -47,8 +58,8 @@ class CalculatorViewController < UIViewController
     options[:x] = 20 unless options[:x]
     options[:y] = 60 unless options[:y]
 
-    button = UIButton.buttonWithType(UIButtonTypeRoundedRect)
-    button.frame = CGRectMake(options[:x], options[:y], 65, 35)
+    # button = UIButton.buttonWithType(UIButtonTypeRoundedRect)
+    button = CoolButton.alloc.initWithFrame([[options[:x], options[:y]], [70, 50]])
     button.setTitle(options[:title], forState:UIControlStateNormal)
     
     case button.currentTitle
