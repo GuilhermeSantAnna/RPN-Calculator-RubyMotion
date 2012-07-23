@@ -19,6 +19,8 @@ class CalculatorViewController < UIViewController
     seven_button = makeButton(title: "7", x: 20,  y: 60)
     view.addSubview(seven_button)
     seven_button.performSelector("brightness=:", withObject:0.1, afterDelay:0)
+    seven_button.performSelector("hue=:", withObject:0.1, afterDelay:0)
+    seven_button.performSelector("saturation=:", withObject:0.1, afterDelay:0)
 
     eight_button = makeButton(title: "8", x: 90,  y: 60)
     view.addSubview(eight_button)
