@@ -20,29 +20,65 @@ class CalculatorViewController < UIViewController
     view.addSubview(seven_button)
     seven_button.performSelector("brightness=:", withObject:0.1, afterDelay:0)
 
-    eight_button = makeButton(title: "8", x: 94,  y: 60)
+    eight_button = makeButton(title: "8", x: 90,  y: 60)
     view.addSubview(eight_button)
     eight_button.performSelector("brightness=:", withObject:0.1, afterDelay:0)
 
-    nine_button = makeButton(title: "9", x: 168, y: 60)
+    nine_button = makeButton(title: "9", x: 160, y: 60)
     view.addSubview(nine_button)
     nine_button.performSelector("brightness=:", withObject:0.1, afterDelay:0)
 
-    view.addSubview(makeButton(title: "*", x: 242, y: 60))
-    view.addSubview(makeButton(title: "4", x: 20,  y: 107))
-    view.addSubview(makeButton(title: "5", x: 94,  y: 107))
-    view.addSubview(makeButton(title: "6", x: 168, y: 107))
-    view.addSubview(makeButton(title: "/", x: 242, y: 107))
-    view.addSubview(makeButton(title: "1", x: 20,  y: 154))
-    view.addSubview(makeButton(title: "2", x: 94,  y: 154))
-    view.addSubview(makeButton(title: "3", x: 168, y: 154))
-    view.addSubview(makeButton(title: "+", x: 242, y: 154))
-    view.addSubview(makeButton(title: "C", x: 20,  y: 201))
-    view.addSubview(makeButton(title: "0", x: 94,  y: 201))
-    view.addSubview(makeButton(title: "Enter", x: 168,  y: 201))
+    multiplication_button = makeButton(title: "*", x: 230, y: 60)
+    view.addSubview(multiplication_button)
+    multiplication_button.performSelector("brightness=:", withObject:0.1, afterDelay:0)
 
-    minus_button = makeButton(title: "-", x: 242,  y: 201)
+    four_button = makeButton(title: "4", x: 20,  y: 110)
+    view.addSubview(four_button)
+    four_button.performSelector("brightness=:", withObject:0.1, afterDelay:0)
+
+    five_button = makeButton(title: "5", x: 90,  y: 110)
+    view.addSubview(five_button)
+    five_button.performSelector("brightness=:", withObject:0.1, afterDelay:0)
+
+    six_button = makeButton(title: "6", x: 160, y: 110)
+    view.addSubview(six_button)
+    six_button.performSelector("brightness=:", withObject:0.1, afterDelay:0)
+
+    division_button = makeButton(title: "/", x: 230, y: 110)
+    view.addSubview(division_button)
+    division_button.performSelector("brightness=:", withObject:0.1, afterDelay:0)
+
+    one_button = makeButton(title: "1", x: 20,  y: 160)
+    view.addSubview(one_button)
+    one_button.performSelector("brightness=:", withObject:0.1, afterDelay:0)
+
+    two_button = makeButton(title: "2", x: 90,  y: 160)
+    view.addSubview(two_button)
+    two_button.performSelector("brightness=:", withObject:0.1, afterDelay:0)
+
+    three_button = makeButton(title: "3", x: 160, y: 160)
+    view.addSubview(three_button)
+    three_button.performSelector("brightness=:", withObject:0.1, afterDelay:0)
+
+    plus_button = makeButton(title: "+", x: 230, y: 160)
+    view.addSubview(plus_button)
+    plus_button.performSelector("brightness=:", withObject:0.1, afterDelay:0)
+
+    clear_button = makeButton(title: "C", x: 20,  y: 210)
+    view.addSubview(clear_button)
+    clear_button.performSelector("brightness=:", withObject:0.1, afterDelay:0)
+
+    zero_button = makeButton(title: "0", x: 90,  y: 210)
+    view.addSubview(zero_button)
+    zero_button.performSelector("brightness=:", withObject:0.1, afterDelay:0)
+
+    enter_button = makeButton(title: "Enter", x: 160,  y: 210)
+    view.addSubview(enter_button)
+    enter_button.performSelector("brightness=:", withObject:0.1, afterDelay:0)
+
+    minus_button = makeButton(title: "-", x: 230,  y: 210)
     view.addSubview(minus_button)
+    minus_button.performSelector("brightness=:", withObject:0.1, afterDelay:0)
   end
 
   def makeLabel
